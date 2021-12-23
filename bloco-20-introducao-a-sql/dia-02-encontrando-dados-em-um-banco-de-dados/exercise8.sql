@@ -1,0 +1,1 @@
+SELECT * FROM sakila.actor LIMIT 10 OFFSET 4;
