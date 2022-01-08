@@ -1,5 +1,6 @@
-const pesoBase = 80; // Você pode utilizar o valor que desejar aqui
-const alturaBase = 180; // Você pode utilizar o valor que desejar aqui
+const readline = require("readline-sync");
+const pesoBase = readline.questionFloat("Digite seu peso: ");
+const alturaBase = readline.questionInt("Digite sua altura: ");
 
 function calculaImc() {
   const peso = pesoBase;
