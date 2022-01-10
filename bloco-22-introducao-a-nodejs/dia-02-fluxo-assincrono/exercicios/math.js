@@ -15,7 +15,7 @@ const math = (a, b, c) => {
   });
 };
 
-math(10, 20, 30)
+/* math(10, 20, 30)
   .then((result) => console.log(result))
   .catch((err) => console.log(err));
 
@@ -25,4 +25,18 @@ math(10, 20, "30")
 
 math(1, 2, 3)
   .then((result) => console.log(result))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err)); */
+
+const generateNumber = () => {
+  return Math.floor(Math.random() * 100 + 1);
+};
+
+const callMath = () => {
+  const a = generateNumber();
+  const b = generateNumber();
+  const c = generateNumber();
+  /* const randomNumbers = Array.from({ length: 3 }).map(generateNumber); */
+  math(a, b, c)
+    .then((result) => console.log(result))
+    .catch((err) => console.log(err));
+};
