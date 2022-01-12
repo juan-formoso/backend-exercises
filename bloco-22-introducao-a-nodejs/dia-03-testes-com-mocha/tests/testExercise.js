@@ -1,5 +1,4 @@
 const { expect } = require("chai");
-
 const validateNumbers = require("../exercise.js");
 
 describe("Executa a função validateNumbers", () => {
