@@ -1,7 +1,10 @@
+/* CONSTANTES */
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
 
+/* ARRAYS DOS OBJETOS */
 const recipes = [
   { id: 1, name: "Lasanha", price: 40.0, waitTime: 30 },
   { id: 2, name: "Macarrão a Bolonhesa", price: 35.0, waitTime: 25 },
@@ -16,12 +19,23 @@ const drinks = [
   { id: 6, name: "Água Mineral 500 ml", price: 5.0 },
 ];
 
+/* USE CORS AND BODY-PARSER */
+app.use(bodyParser.json());
 app.use(cors());
 
+/* REQUISIÇÃO VIA 'POST' DAS RECEITAS*/
+app.post("/recipes", function (req, res) {
+  const { id, name, price } = req.body;
+  recipes.push({ id, name, price });
+  res.status(201).json({ message: "Recipe created successfully" });
+});
+
+/* REQUISIÇÃO VIA 'GET' DAS RECEITAS*/
 app.get("/recipes", function (req, res) {
   res.json(recipes.sort());
 });
 
+/* PESQUISA DAS RECEITAS */
 app.get("/recipes/search", function (req, res) {
   const { name, maxPrice, minPrice } = req.query;
   const filteredRecipes = recipes.filter(
@@ -33,6 +47,7 @@ app.get("/recipes/search", function (req, res) {
   res.status(200).json(filteredRecipes);
 });
 
+/* ID DAS RECEITAS */
 app.get("/recipes/:id", function (req, res) {
   const { id } = req.params;
   const recipe = recipes.find((r) => r.id === parseInt(id));
@@ -42,25 +57,41 @@ app.get("/recipes/:id", function (req, res) {
   res.status(200).json(recipe);
 });
 
+/* REQUISIÇÃO VIA 'GET' DAS BEBIDAS */
 app.get("/drinks", function (req, res) {
   res.json(drinks.sort());
 });
 
+/* PESQUISA DAS BEBIDAS */
 app.get("/drinks/search", function (req, res) {
   const { name } = req.query;
   const filteredDrinks = drinks.filter((d) => d.name.includes(name));
   res.status(200).json(filteredDrinks);
 });
 
+/* ID DAS BEBIDAS */
 app.get("/drinks/:id", function (req, res) {
   const { id } = req.params;
   const drink = drinks.find((d) => d.id === parseInt(id));
-
   if (!drink) return res.status(404).json({ message: "Drink not found!" });
-
   res.status(200).json(drink);
 });
 
+/* ENVIA AO SERVIDOR */
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
+});
+
+/* FETCH DO METODO 'POST' */
+fetch(`http://localhost:3001/recipes/`, {
+  method: "POST",
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    id: 4,
+    name: "Macarrão com Frango",
+    price: 30,
+  }),
 });
