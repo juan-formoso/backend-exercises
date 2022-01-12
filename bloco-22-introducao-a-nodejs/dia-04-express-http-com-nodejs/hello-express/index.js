@@ -8,5 +8,5 @@ app.listen(3001, () => {
 });
 
 function handleHelloWorldRequest(request, response) {
-  response.status(200).send("Hello World!");
+  response.status(200).send("Hello World");
 }
