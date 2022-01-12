@@ -39,4 +39,16 @@ describe("Executa a função validateNumbers", () => {
       });
     });
   });
+  describe("se o parâmetro passado não for um número", () => {
+    describe("a resposta será", () => {
+      it("uma string", () => {
+        const parameters = validateNumbers("teste");
+        expect(parameters).to.be.a("string");
+      });
+      it("é igual a 'o valor deve ser um número'", () => {
+        const parameters = validateNumbers("teste");
+        expect(parameters).to.be.equals("o valor deve ser um número");
+      });
+    });
+  });
 });
