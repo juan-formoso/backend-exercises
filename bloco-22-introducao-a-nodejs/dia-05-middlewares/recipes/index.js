@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 app.get("/open", function (req, res) {
   res.send("Open");
 });
+app.use(authMiddleware);
 
 const recipes = [
   { id: 1, name: "Lasanha", price: 40.0, waitTime: 30 },
