@@ -34,15 +34,37 @@ app.get("/recipes/:id", function (req, res) {
   res.status(200).json(recipe);
 });
 
+// Validate Name
+function validateName(req, res, next) {
+  const { name } = req.body;
+  if (!name || name === "")
+    return res.status(400).json({ message: "Invalid data. Name is required!" });
+  next();
+}
+
+// Validate Price
+function validatePrice(req, res, next) {
+  const { price } = req.body;
+  if (!price || price === "")
+    return res
+      .status(400)
+      .json({ message: "Invalid data. Price is required!" });
+  if (price <= 0)
+    return res
+      .status(400)
+      .json({ message: "Invalid data. Price must be greater than 0!" });
+  next();
+}
+
 /* POST RECIPES */
-app.post("/recipes", function (req, res) {
+app.post("/recipes", validateName, validatePrice, function (req, res) {
   const { id, name, price, waitTime } = req.body;
   recipes.push({ id, name, price, waitTime });
   res.status(201).json({ message: "Recipe created successfully!" });
 });
 
 /* PUT RECIPES */
-app.put("/recipes/:id", function (req, res) {
+app.put("/recipes/:id", validateName, validatePrice, function (req, res) {
   const { id } = req.params;
   const { name, price, waitTime } = req.body;
   const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
