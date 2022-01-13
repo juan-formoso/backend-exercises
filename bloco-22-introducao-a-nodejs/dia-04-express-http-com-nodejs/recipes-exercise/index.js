@@ -109,6 +109,11 @@ app.listen(3001, () => {
   console.log("Server is running on port 3001");
 });
 
+/* PARA ROTAS INEXISTENTES */
+app.all("*", function (req, res) {
+  return res.status(404).json({ message: `Rota '${req.path}' não existe!` });
+});
+
 /* FETCH DO METODO 'POST' */
 /* fetch(`http://localhost:3001/recipes/`, {
   method: "POST",
