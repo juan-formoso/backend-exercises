@@ -2,8 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const rescue = require("express-rescue");
 const app = express();
-const simpsonsUtils = require("./fs-utils");
+const authMiddleware = require("./src/authMiddleware");
+const simpsonsUtils = require("./src/readAndWrite");
+const crypto = require("crypto");
 
+app.use(express.json());
+app.use(authMiddleware);
 app.use(bodyParser.json());
 
 /* GET ROUTE */
@@ -35,6 +39,16 @@ app.get(
 app.post("/hello", (req, res) => {
   const { name } = req.body;
   res.status(200).json({ message: `Hello, ${name}!` });
+});
+
+// Validate token and add a post signup
+app.post("/signup", (req, res) => {
+  const { email, passowrd, firstName, phone } = req.body;
+  if ([email, password, firstName, phone].includes(undefined)) {
+    return res.status(401).json({ message: "missing fields" });
+  }
+  const token = crypto.randomBytes(8).toString("hex");
+  res.status(200).json({ token });
 });
 
 // Endpoint to add a new simpson
