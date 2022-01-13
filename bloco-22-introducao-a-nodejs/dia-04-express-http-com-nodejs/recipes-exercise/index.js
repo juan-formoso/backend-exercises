@@ -110,7 +110,7 @@ app.listen(3001, () => {
 });
 
 /* FETCH DO METODO 'POST' */
-fetch(`http://localhost:3001/recipes/`, {
+/* fetch(`http://localhost:3001/recipes/`, {
   method: "POST",
   headers: {
     Accept: "application/json",
@@ -121,10 +121,10 @@ fetch(`http://localhost:3001/recipes/`, {
     name: "Macarrão com Frango",
     price: 30,
   }),
-});
+}); */
 
 /* Requisição do tipo PUT */
-fetch(`http://localhost:3001/recipes/2`, {
+/* fetch(`http://localhost:3001/recipes/2`, {
   method: "PUT",
   headers: {
     Accept: "application/json",
@@ -134,13 +134,14 @@ fetch(`http://localhost:3001/recipes/2`, {
     name: "Macarrão ao alho e óleo",
     price: 40,
   }),
-});
+}); */
 
 /* Requisição do tipo DELETE */
-fetch(`http://localhost:3001/recipes/4`, {
+/* fetch(`http://localhost:3001/recipes/4`, {
   method: "DELETE",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
   },
 });
+ */
