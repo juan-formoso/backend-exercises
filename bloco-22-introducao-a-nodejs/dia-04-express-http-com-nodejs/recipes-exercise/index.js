@@ -23,11 +23,19 @@ const drinks = [
 app.use(bodyParser.json());
 app.use(cors());
 
+/* VALIDAÇÃO DE TOKENS */
+app.get("/validateToken", function (req, res) {
+  const token = req.headers.authorization;
+  if (token.length !== 16)
+    return res.status(401).json({ message: "Invalid Token!" });
+  res.status(200).json({ message: "Valid Token!" });
+});
+
 /* REQUISIÇÃO VIA 'POST' DAS RECEITAS*/
 app.post("/recipes", function (req, res) {
   const { id, name, price } = req.body;
   recipes.push({ id, name, price });
-  res.status(201).json({ message: "Recipe created successfully" });
+  res.status(201).json({ message: "Recipe created successfully!" });
 });
 
 /* REQUISIÇÃO VIA 'GET' DAS RECEITAS*/
@@ -83,7 +91,7 @@ app.listen(3001, () => {
 });
 
 /* FETCH DO METODO 'POST' */
-fetch(`http://localhost:3001/recipes/`, {
+/* fetch(`http://localhost:3001/recipes/`, {
   method: "POST",
   headers: {
     Accept: "application/json",
@@ -94,4 +102,4 @@ fetch(`http://localhost:3001/recipes/`, {
     name: "Macarrão com Frango",
     price: 30,
   }),
-});
+}); */
