@@ -1,5 +1,3 @@
-// users-manager/models/User.js
-
 // Começamos importando a conexão com o banco
 const connection = require("./connection");
 
