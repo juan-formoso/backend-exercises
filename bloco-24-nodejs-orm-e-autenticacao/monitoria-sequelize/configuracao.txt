@@ -1,0 +1,23 @@
+1. Iniciar a aplicação:
+  npm init -y
+
+  > Colocar node_modules no gitignore
+
+2. Instalar o sequelize:
+  npm install sequelize 
+
+3. Instalar a CLI:
+  npm install sequelize-cli
+
+4. Instalar o mysql2:
+  npm install mysql2
+
+*Atalho*
+  npm i sequelize sequelize-cli mysql2
+
+5. Inicializar o sequelize:
+  npx sequelize-cli init
+
+6. Criar as váriaveis de ambiente:
+
+  - OBS: sequelize cria um banco para cada ambiente (desenvolvimento, teste e produção).
