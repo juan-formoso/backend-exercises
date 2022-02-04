@@ -21,3 +21,6 @@
 6. Criar as váriaveis de ambiente:
 
   - OBS: sequelize cria um banco para cada ambiente (desenvolvimento, teste e produção).
+
+7. Criar o banco usando o CLI:
+  npx sequelize db:create
