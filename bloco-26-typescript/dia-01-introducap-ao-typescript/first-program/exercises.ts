@@ -22,6 +22,10 @@ export const squareArea = (side: number): number => {
   return side ** 2;
 };
 
+export const rectangleArea = (base: number, height: number): number => {
+  return base * height;
+};
+
 export const losangleArea = (base: number, height: number): number => {
   return (base * height) / 2;
 };
