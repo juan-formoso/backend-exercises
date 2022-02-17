@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.rectangleArea = exports.squareArea = exports.triangleArea = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
+exports.circleArea = exports.trapezeArea = exports.losangleArea = exports.rectangleArea = exports.squareArea = exports.triangleArea = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
 const greeter = (name) => {
     return `Hello ${name}!`;
 };
@@ -29,3 +29,15 @@ const rectangleArea = (base, height) => {
     return base * height;
 };
 exports.rectangleArea = rectangleArea;
+const losangleArea = (base, height) => {
+    return (base * height) / 2;
+};
+exports.losangleArea = losangleArea;
+const trapezeArea = (base1, base2, height) => {
+    return ((base1 + base2) * height) / 2;
+};
+exports.trapezeArea = trapezeArea;
+const circleArea = (radius) => {
+    return Math.PI * radius ** 2;
+};
+exports.circleArea = circleArea;
