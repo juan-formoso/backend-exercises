@@ -22,6 +22,18 @@ export const squareArea = (side: number): number => {
   return side ** 2;
 };
 
-export const rectangleArea = (base: number, height: number): number => {
-  return base * height;
+export const losangleArea = (base: number, height: number): number => {
+  return (base * height) / 2;
+};
+
+export const trapezeArea = (
+  base1: number,
+  base2: number,
+  height: number
+): number => {
+  return ((base1 + base2) * height) / 2;
+};
+
+export const circleArea = (radius: number): number => {
+  return Math.PI * radius ** 2;
 };
