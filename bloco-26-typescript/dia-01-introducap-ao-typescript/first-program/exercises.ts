@@ -13,3 +13,7 @@ export const add = (a: number, b: number) => {
 export const sumArray = (numbers: number[]) => {
   return numbers.reduce(add, 0);
 };
+
+export const triangleArea = (base: number, height: number) => {
+  return (base * height) / 2;
+};
