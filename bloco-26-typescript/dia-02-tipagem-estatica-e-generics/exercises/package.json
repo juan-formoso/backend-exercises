@@ -12,5 +12,8 @@
   "devDependencies": {
     "@tsconfig/node14": "^1.0.1",
     "@types/node": "^17.0.18"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
