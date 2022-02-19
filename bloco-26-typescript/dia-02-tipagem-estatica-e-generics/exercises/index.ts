@@ -17,19 +17,19 @@ if (choiceMonth === -1) {
 }
 
 const seasonsSouth = {
-  [Seasons.AUTUMN]: [Months.MARCO, Months.ABRIL, Months.MAIO, Months.JUNE],
-  [Seasons.WINTER]: [Months.JUNE, Months.JULHO, Months.AGOSTO, Months.SETEMBRO],
-  [Seasons.PRIMAVERA]: [
-    Months.SETEMBRO,
-    Months.OUTUBRO,
-    Months.NOVEMBRO,
-    Months.DEZEMBRO,
+  [Seasons.AUTUMN]: [Months.MARCH, Months.APRIL, Months.MAY, Months.JUNE],
+  [Seasons.WINTER]: [Months.JUNE, Months.JULY, Months.AUGUST, Months.SEPTEMBER],
+  [Seasons.SPRING]: [
+    Months.SEPTEMBER,
+    Months.OCTOBER,
+    Months.NOVEMBER,
+    Months.DECEMBER,
   ],
-  [Seasons.VERAO]: [
-    Months.DEZEMBRO,
-    Months.JANEIRO,
-    Months.FEVEREIRO,
-    Months.MARCO,
+  [Seasons.SUMMER]: [
+    Months.DECEMBER,
+    Months.JANUARY,
+    Months.FEBRUARY,
+    Months.MARCH,
   ],
 };
 // Criamos um objeto onde suas chaves são as estações
@@ -38,10 +38,10 @@ const seasonsSouth = {
 // são opostas também
 
 const seasonsNorth = {
-  [Seasons.PRIMAVERA]: seasonsSouth[Seasons.AUTUMN],
-  [Seasons.VERAO]: seasonsSouth[Seasons.WINTER],
-  [Seasons.AUTUMN]: seasonsSouth[Seasons.PRIMAVERA],
-  [Seasons.WINTER]: seasonsSouth[Seasons.VERAO],
+  [Seasons.SPRING]: seasonsSouth[Seasons.AUTUMN],
+  [Seasons.SUMMER]: seasonsSouth[Seasons.WINTER],
+  [Seasons.AUTUMN]: seasonsSouth[Seasons.SPRING],
+  [Seasons.WINTER]: seasonsSouth[Seasons.SUMMER],
 };
 
 const hemispheres = {
