@@ -1,9 +1,9 @@
 import express, { Request, Response } from "express";
 import BooksRoutes from "./routes/books";
 
-const app = express();
-
 const PORT = 8000;
+const app: express.Application = express();
+app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript");
