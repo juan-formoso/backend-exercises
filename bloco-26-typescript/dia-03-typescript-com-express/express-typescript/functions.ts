@@ -7,4 +7,9 @@ const read = async (): Promise<Book[]> => {
   return books;
 };
 
-export { read };
+const write = async (books: Book[]): Promise<void> => {
+  const data = JSON.stringify(books);
+  await fs.writeFile("./books.json", data);
+};
+
+export { read, write };
