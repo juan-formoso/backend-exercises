@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 
-const rouuter = Router();
+const router = Router();
 
 router.get("/books", (req: Request, res: Response) => {});
 

@@ -6,7 +6,7 @@ const app = express();
 const PORT = 8000;
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript")
+  res.send("Express + TypeScript");
 });
 
 app.use(BooksRoutes);
