@@ -1,11 +1,11 @@
-import express from 'express';
+import express, { Request, Response } from "express";
 
 const app = express();
 
 const PORT = 8000;
 
-app.get('/', (req, res) => {
-  res.send('Express + TypeScript')
+app.get("/", (req: Request, res: Response) => {
+  res.send("Express + TypeScript")
 });
 
 app.listen(PORT, () => {
