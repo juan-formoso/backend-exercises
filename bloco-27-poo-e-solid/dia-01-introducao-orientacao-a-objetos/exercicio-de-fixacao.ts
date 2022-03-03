@@ -21,6 +21,17 @@ class TV {
       `TV ${this._brand} is on, ${this._size} inches, ${this._resolution} resolution, and is connected to ${this._connections}`
     );
   }
+  get connectedTo(): string {
+    return this._connectedTo;
+  }
+  set connectedTo(value: string) {
+    if (this._connections.includes(value)) {
+      this._connectedTo = value;
+      console.log(this._connectedTo);
+    } else {
+      console.log("Sorry, connection not available");
+    }
+  }
 }
 
 // Instancie um objeto a partir da classe Tv, chame o método turnOn para imprimir seus atributos.
