@@ -1,9 +1,9 @@
 class TV {
-  brand: string;
-  size: number;
-  resolution: string;
-  connections: string[];
-  connectedTo: string;
+  private _brand: string;
+  private _size: number;
+  private _resolution: string;
+  private _connections: string[];
+  private _connectedTo: string;
 
   constructor(
     brand: string,
@@ -11,14 +11,14 @@ class TV {
     resolution: string,
     connections: string[]
   ) {
-    this.brand = brand;
-    this.size = size;
-    this.resolution = resolution;
-    this.connections = connections;
+    this._brand = brand;
+    this._size = size;
+    this._resolution = resolution;
+    this._connections = connections;
   }
-  turnOn() {
+  turnOn(): void {
     console.log(
-      `TV ${this.brand} is on, ${this.size} inches, ${this.resolution} resolution, and is connected to ${this.connections}`
+      `TV ${this._brand} is on, ${this._size} inches, ${this._resolution} resolution, and is connected to ${this._connections}`
     );
   }
 }
