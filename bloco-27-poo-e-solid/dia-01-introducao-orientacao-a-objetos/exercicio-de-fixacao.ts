@@ -37,3 +37,5 @@ class TV {
 // Instancie um objeto a partir da classe Tv, chame o método turnOn para imprimir seus atributos.
 const tv = new TV("Samsung", 55, "4k", ["HDMI", "USB"]);
 tv.turnOn();
+tv.connectedTo = "HDMI";
+console.log("Connected to: ", tv.connectedTo);
