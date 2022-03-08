@@ -8,10 +8,16 @@ class Superclass {
   }
 }
 
-class Subclass extends Superclass {}
+class Subclass extends Superclass {
+  constructor(public isSub: boolean) {
+    super(true);
+    this.isSub = false;
+  }
+}
 
 const myFunc = (object: Superclass) => {
   object.sayHello();
+  console.log(object.isSuper ? "Super!" : "Sub!");
 };
 
 // Crie um objeto da Superclass e outro da Subclass
