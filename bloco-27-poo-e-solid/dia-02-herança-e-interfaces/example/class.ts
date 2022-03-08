@@ -16,7 +16,7 @@ class Animal {
 
     constructor(public x: number) { }
   */
-  constructor(public name: string, private birthDate: Date) {}
+  constructor(public name: string, protected birthDate: Date) {}
   get age() {
     const today = new Date();
     let age = today.getFullYear() - this.birthDate.getFullYear();
@@ -71,6 +71,9 @@ class Bird extends Animal {
   fly() {
     console.log(`${this.name} is flying`);
   }
+  showBirthDate() {
+    console.log(this.birthDate);
+  }
 }
 
 const d2 = new Date();
@@ -85,3 +88,17 @@ Saída (código executado em 2021):
 4
 Parrot is flying
 */
+
+/* Em TypeScript, o método construtor de uma subclasse deve ser o mesmo da superclasse (os exemplos anteriores funcionaram pois não tinham o construtor), ou deve chamar o da superclasse.
+
+class Animal {
+  constructor(protected birthDate: Date) { }
+}
+class Bird extends Animal {
+  constructor(public name: string) {
+    super(new Date());
+  }
+} 
+
+O super é basicamente uma referência à superclasse.
+Ao ser invocado como uma função, está invocando o construtor da superclasse.*/
