@@ -7,6 +7,7 @@ class Animal {
 
 class Bird extends Animal {
   move() {
+    super.move();
     console.log(`${this.name} está voando.`);
   }
 }
@@ -32,6 +33,7 @@ myMove(c);
 /*
 SAÍDA:
 Animal está se movendo.
+Bird está se movendo.
 Bird está voando.
 Mammal está correndo.
 */
