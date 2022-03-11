@@ -1,0 +1,7 @@
+First you need to have a code editor and Node installed (version 12^ recommended)
+
+Install typescript: npm install -g typescript
+
+Compile: tsc helloworld.ts
+
+
