@@ -108,3 +108,107 @@ Essa abstração define corretamente o caminho que o processo deveria seguir! Vo
 * O modelo correto que você deve ter em mente é o de **plugins!** Como as extensões instaladas no seu navegador.
   > Nem você nem o dono da extensão precisou verificar o binário do Navegador para fazer ele funcionar, pois ele já respeita as regras de contrato.
   > Ele modifica o navegador mas mantém sua base.
+
+## L Principle
+Liskov Substitution Principle
+
+O princípio defende que se temos uma classe e delas criarmos uma subclasse usando **herança** o objeto ou instância resultante dessa subclasse deve conseguir substituir os da classe anterior sem quebrar a aplicação.
+
+### Robot Example
+* Context:
+
+Robot Father says --> Hi I'm Sam. I make coffee
+
+Robot Son says --> Hi, I'm Eden. Sam's Child
+
+Robot Client says --> Hey Sam, Can you make me coffee?
+
+Sam says --> Here's your coffee
+
+Eden says --> Great! Thanks
+
+* Wrong:
+
+Robot Client says --> Hey Eden, Sam is not here right now. Can you make me coffee?
+
+Eden says --> I can't make coffee but here's water
+
+Robot Client says --> >:(
+
+* Right:
+
+Robot Client says --> Hey Eden, Sam is not here right now. Can you make me coffee?
+
+Eden says --> Sure! Here's a cappuccino
+
+Client says --> Great! Thanks
+
+### Birds Example
+```
+Ave()
+  bicar!
+  voar!
+
+    PicaPau()
+      bicar!
+      voar!
+
+    Pinguim()
+      bicar!
+      voar#
+```
+
+> Se a cada herança que você fazer, você está lutando com o que herda, você precisa desfazer o que herdou, é bem capaz que você já tenha começado com a abstração errada.
+
+## I Principle
+Interface Segregation Principle
+
+* Esse princípio diz que clientes não devem ser forçados a depender de métodos que eles não usam!
+
+* Entenda clientes como uma classe que é forçada a implementar uma interface com métodos que ela não vai precisar.
+
+### Robot Example
+* Wrong:
+
+**BLACK BOARD**
+EXERCISES
+All Robots
+-------------------
+- Spin around
+- Rotate arms
+- Wiggle antennas
+
+Robot without antennas says --> Oops! But I don't have antennas
+
+* Right:
+
+**BLACK BOARD**
+EXERCISES
+-----------------------------------
+
+1. Robots that can spin around
+  - Spin around
+
+2. Robots that can rotate arms
+  - Rotate arms
+
+3. Robots that can wiggle antennas
+  - Wiggle antennas
+
+Both kind of robots says --> AWESOME!
+
+## D Principle
+Dependency Inversion Principle
+
+* Esse princípio defende que um módulo não deve depender dos detalhes e implementação de outro módulo de maneira direta. Deve existir uma abstração entre eles, como uma interface.
+
+### Robot Example
+* Wrong:
+
+Robot says --> I cut pizza with my pizza cutter arm
+
+**Edward Mãos de Tesoura alike...**
+
+* Right:
+
+Robot says --> I cut pizza with any tool given to me
