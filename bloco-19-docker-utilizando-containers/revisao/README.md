@@ -42,3 +42,9 @@ Analogia: - Container Docker -> Programa que você executou após descompactá-l
    a. Partindo de uma imagem base com Python que está em um **Registry**
    b. Copia seu script para dentro da imagem
    c. Pronto!
+
+3. Aonde deixar as imagens?
+
+- Não dá para deixar várias imagens Docker no computador.
+- Execute `docker images` para ver quais imagens já estão no PC.
+- Precisamos de um lugar **confiável e seguro** para armazenar nossas imagens Docker e obtê-las quando precisarmos.
