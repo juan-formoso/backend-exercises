@@ -48,3 +48,12 @@ Analogia: - Container Docker -> Programa que você executou após descompactá-l
 - Não dá para deixar várias imagens Docker no computador.
 - Execute `docker images` para ver quais imagens já estão no PC.
 - Precisamos de um lugar **confiável e seguro** para armazenar nossas imagens Docker e obtê-las quando precisarmos.
+
+### Revisão dos conceitos!
+
+- **Docker**: Conjunto de ferramentas (Dameon, API, CLI) para gerenciar imagens e containers.
+- Arquivo **Dockerfile** Arquivo com linguagem própria, com os passos necessários para criar uma imagem Docker a partir do código-fonte puro de um projeto.
+- **Imagem Docker**: É o projeto "compactado", que foi construído de acordo com os passos contidos no arquivo Dockerfile.
+- **Container**: É a execução de projeto através da sua imagem Docker já construída anteriormente.
+- **Registry**: Local remoto onde podemos enviar e baixar imagens Docker.
+- **DockerHub**: É o registry oficial da empresa Docker Inc.
