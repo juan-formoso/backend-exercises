@@ -29,3 +29,16 @@ Analogia: - Imagem Docker -> Arquivo .ISO quando vamos formatar um PC (é o sist
 > Você pode entrar no terminal de um container!
 
 Analogia: - Container Docker -> Programa que você executou após descompactá-lo de um arquivo zipado.
+
+### Construir uma imagem usando outra imagem
+
+1. Você quer construir uma imagem que precisa executar um script em Python.
+   a. Instala dependências
+   b. Instala o Python
+   c. Copia seu script para dentro da imagem
+   d. Pronto!
+
+2. A partir de uma imagem base que já possui o Python instalado, seu Dockerfile apenas copia seu script e sua imagem já está pronta!
+   a. Partindo de uma imagem base com Python que está em um **Registry**
+   b. Copia seu script para dentro da imagem
+   c. Pronto!
