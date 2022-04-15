@@ -1,0 +1,11 @@
+- Docker build - Constrói uma imagem Docker a partir das instruções contidas no arquivo de texto chamado Dockerfile.
+
+- Docker run - Executa uma imagem Docker como um container Docker.
+
+- Docker images - Lista as imagens Docker atualmente em sua máquina.
+
+- Docker ps - Lista os container em execução atualmente em sua máquina.
+
+- Docker stop - Para a execução de um container.
+
+- Docker rm - Apaga um container Docker que foi parado em sua máquina.
