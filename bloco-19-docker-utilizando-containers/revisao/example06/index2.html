@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olá Mundo!</title>
+  </head>
+  <body>
+    <h1>Eu estou na Disney!</h1>
+    <p>
+      Este site estava dentro de uma imagem Docker. Que agora foi executada como
+      um container.
+    </p>
+    <img id="dog" style="max-height: 500px" src="" alt="Carregando..." />
+  </body>
+  <script>
+    fetch("https://dog.ceo/api/breeds/image/random")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        document.getElementById("dog").src = data.message;
+      });
+  </script>
+</html>
