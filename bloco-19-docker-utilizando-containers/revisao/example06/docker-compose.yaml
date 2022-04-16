@@ -8,6 +8,6 @@ services:
   web2:
     build:
       context: .
-      dockerfile: Dockerfil2
+      dockerfile: Dockerfile2
     ports:
       - "8002:3000"
