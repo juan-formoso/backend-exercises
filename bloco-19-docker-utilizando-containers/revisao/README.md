@@ -57,3 +57,7 @@ Analogia: - Container Docker -> Programa que você executou após descompactá-l
 - **Container**: É a execução de projeto através da sua imagem Docker já construída anteriormente.
 - **Registry**: Local remoto onde podemos enviar e baixar imagens Docker.
 - **DockerHub**: É o registry oficial da empresa Docker Inc.
+
+### Para limpar o disco
+
+`docker system prune -a`
