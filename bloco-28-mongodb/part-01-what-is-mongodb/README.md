@@ -45,3 +45,45 @@ MongoDB is a **document-oriented, no sequel (NoSQL)** database.
 
 8. MapReduce:
    MapReduce is an excellent tool to build data pipelons and mongodb uses mapreduce readily.
+
+## Working of MongoDB
+
+**Documents store data with the help of key-value pairs**
+
+#### Explanation:
+
+> The data is stored in the _bson_ format.
+> At the backend, mongodb converts json data into a binary format known as bson.
+> MongoDB also makes provision for nested data
+
+- Now, all of these documents store in a collection.
+  **Collection is a group of documents**
+
+- These collections hold multiple documents and since mongodb is schema-less, the documents in one collection do not need to be similar.
+
+> These collections are storedd in the entire mongodb database.
+
+> MongoDB makes provision for nested data. This makes fetching of data extremely efficient when compared to other databases.
+
+### Where does MongoDB can be applied or used?
+
+**Applications of MongoDB**
+
+1. Internet of Things
+2. Mobile applications
+3. Real time analysis
+4. Personalization
+5. Catalog management
+6. Content management
+
+### Companies that use MongoDB
+
+1. Toyota
+2. SAP
+3. Astrazeneca
+4. Adobe
+5. Verizon
+6. Cisco
+7. Amazon
+8. Apple
+9. Google
