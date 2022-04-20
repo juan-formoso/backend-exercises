@@ -28,3 +28,39 @@
 12. Replication
 13. Sharding
 14. Deployment
+
+### Create Database
+
+`use databaseName;`
+
+**If you want to know in which database in are, type:**
+`db;`
+
+**To see your databases**
+`show dbs;`
+
+### Create collection
+
+> Table = Collection
+> DB = DB
+> Row = Document
+
+**OBS: This is a more appropriated way of doing this**
+`db.createCollection('collectionName');`
+
+**If you want to also insert a record while creating the collection use this script instead:**
+`db.collectionName.insert({propertyName:'value'});`
+
+**To see your collections**
+`show collections;`
+
+**Find records**
+`db.collectionName.find();`
+
+### Create collection and modify property
+
+`db.createCollection("collectionName", { capped: true, size: 5242880, max: 5 });`
+
+> Max = Num of documents
+> Size = Not more than 5MB
+> Capped = Enable Caps
