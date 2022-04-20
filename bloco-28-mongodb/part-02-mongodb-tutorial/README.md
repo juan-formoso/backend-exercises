@@ -64,3 +64,12 @@
 > Max = Num of documents
 > Size = Not more than 5MB
 > Capped = Enable Caps
+
+### Insert Records
+
+`db.collectionName.insert({ record1: "value", record2: "value", ..., recordN: "value" });`
+
+**You can also add "sub records" like this:**
+`db.collectionName.insert({ record1: "value", record2: "value", ..., recordN:{ subRecord1: "value" } });`
+
+**OBS: there is no primary key here, every record is completely dependent from the collection.**
