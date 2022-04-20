@@ -1,28 +1,28 @@
 // Cumprindo o Princípio OCP (Open Closed Principle)
 
-class Employee {
+class Intern {
   name: string = "Rafael";
   salary: number = 1000;
   hours: number = 40;
 }
 
-class Trainee extends Employee {
+class Trainee extends Intern {
   name: string = "Thiago";
   salary: number = 2000;
   hours: number = 20;
 }
 
 class Payment {
-  pay(employee: Employee | Trainee) {
-    const salary: number = employee.salary * employee.hours;
-    return `Paying ${employee.salary} to ${employee.name}`;
+  pay(Intern: Intern | Trainee) {
+    const salary: number = Intern.salary * Intern.hours;
+    return `Paying ${Intern.salary} to ${Intern.name}`;
   }
 }
 
 const payment = new Payment();
-payment.pay(new Employee());
+payment.pay(new Intern());
 
 export default {
-  Employee,
+  Intern,
   Payment,
 };
