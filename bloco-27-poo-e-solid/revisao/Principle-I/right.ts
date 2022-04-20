@@ -34,7 +34,8 @@ class Developer implements Person {
   hours: number = 30;
 
   salaryCalc(): number {
-    return this.salary * this.hours;
+    const bonus = this.salary * this.hours * 0.1;
+    return this.salary * this.hours + bonus;
   }
 }
 
