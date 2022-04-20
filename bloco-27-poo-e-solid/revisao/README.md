@@ -41,3 +41,13 @@ Acrônimo das boas práticas que visam melhorar a construção e arquitetura de 
 - D = Dependency Inversion Principle (DIP)
 
   > Você pode trocar o responsável por uma abstração. **Exemplo: você tem seus serviços e quer trocar uma classe de envio de email porém você utiliza ela para outros serviços e em determinado momento você troca seu provedor de email, logo você terá que passar por todas as classes e fazer essa alteração. O Correto é criar uma abstração que faça todo isso.**
+
+### Arquitetura
+
+Controladores -> Adaptadores -> Casos de uso -> Entidades (Centro)
+
+- O controlador está usando um adaptador (a injeção de dependência).
+- O controlador possui um caso de uso como pagamento para uma pessoa trabalhadora.
+- As entidades são as abstrações, é SEMPRE DE **FORA PARA DENTRO**.
+- UMA ENTIDADE NÃO PODE DEPENDER DE UM ADAPTADOR JAMAIS!!!
+- **Lado de dentro ficam sempre as entidades e as regras de negócio.**
