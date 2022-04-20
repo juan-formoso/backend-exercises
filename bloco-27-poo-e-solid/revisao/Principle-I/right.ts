@@ -28,7 +28,7 @@ class Junior implements Person {
   }
 }
 
-class Developer implements Person {
+class Senior implements Person {
   name: string = "João";
   salary: number = 3000;
   hours: number = 30;
@@ -49,6 +49,6 @@ class Payment {
 const payment = new Payment();
 payment.pay(new Intern());
 payment.pay(new Junior());
-payment.pay(new Developer());
+payment.pay(new Senior());
 
 export default Payment;
