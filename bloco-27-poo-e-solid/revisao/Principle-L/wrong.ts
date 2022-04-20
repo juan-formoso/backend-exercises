@@ -1,4 +1,6 @@
-// Cumprindo o Princípio OCP (Open Closed Principle)
+// Violando o Princípio de Liskov Substitution.
+
+/* Explicação: nao é possível adicionar outro exemplo de funcionário. */
 
 class Intern {
   name: string = "Rafael";

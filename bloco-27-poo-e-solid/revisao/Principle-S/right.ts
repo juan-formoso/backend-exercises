@@ -16,7 +16,4 @@ class Payment {
 const payment = new Payment();
 payment.pay(new Intern());
 
-export default {
-  Intern,
-  Payment,
-};
+export default Payment;
