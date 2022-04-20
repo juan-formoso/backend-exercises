@@ -6,14 +6,14 @@ class Intern {
   hours: number = 40;
 }
 
-class Trainee extends Intern {
+class Junior extends Intern {
   name: string = "Thiago";
   salary: number = 2000;
   hours: number = 20;
 }
 
 class Payment {
-  pay(Intern: Intern | Trainee) {
+  pay(Intern: Intern | Junior) {
     const salary: number = Intern.salary * Intern.hours;
     return `Paying ${Intern.salary} to ${Intern.name}`;
   }
